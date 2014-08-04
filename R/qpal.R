@@ -35,7 +35,9 @@ qpal <- function(
     hue.end = NULL,
     chroma = 100,
     luminance = 60,
-    direction = 1) {
+    direction = 1,
+    fixup = TRUE,
+    alpha = 1) {
 
 
     if(hue.start > 360)
@@ -68,7 +70,8 @@ qpal <- function(
         angles <- c(ang1, ang2)
     } 
     
-    co <- hcl(h = angles, l = luminance, c = chroma)
+    co <- hcl(h = angles, l = luminance, c = chroma, alpha = alpha, 
+        fixup = fixup)
 
     if(n == 1)
         co <- co[1]
