@@ -1,4 +1,4 @@
-#' @title Show color palette in a barplot
+#' @title Visualize color palette in a barplot
 #'
 #' @description
 #' \code{plotpal} allows you to easily visualize a color palette by plotting the

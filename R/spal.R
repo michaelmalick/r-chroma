@@ -14,6 +14,11 @@
 #' range of chroma values
 #' @param luminance vector of length 2 giving the start and end bounds for the
 #' range of luminance values
+#' @param alpha numeric vector of values in the range [0,1] for alpha
+#' transparency channel (0 means transparent and 1 means opaque)
+#' @param fixup a logical value which indicates whether the resulting RGB values 
+#' should be corrected to ensure that a real color results. if fixup is FALSE 
+#' RGB components lying outside the range [0,1] will result in an NA value
 #'
 #' @return \code{spal} returns a vector of hex colors
 #'
@@ -36,15 +41,18 @@ spal <- function(
     hue.end = NULL,
     luminance = c(30, 85),
     # luminance = c(85, 30),
-    chroma = c(90, 100)) {
-    
+    chroma = c(90, 100),
+    alpha = 1,
+    fixup = TRUE) { 
+
     if(is.null(hue.end)) {
         co <- hcl(h = hue.start, l = seq(luminance[1], luminance[2], 
             length.out = n), c = chroma)
     } else {
         co <- qpal(n = n, hue.start = hue.start, hue.end = hue.end, 
             luminance = seq(luminance[1], luminance[2], length.out = n), 
-            chroma = seq(chroma[1], chroma[2], length.out = n))
+            chroma = seq(chroma[1], chroma[2], length.out = n),
+            alpha = alpha, fixup = fixup)
     }
 
     return(co)

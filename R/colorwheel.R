@@ -9,7 +9,7 @@
 #' @param luminance luminance value for palette
 #' @param labels logical, should degree labels be shown
 #' @param alpha numeric vector of values in the range [0,1] for alpha
-#' transparency channel (0 means transparent and 1 means opaque) #'
+#' transparency channel (0 means transparent and 1 means opaque)
 #' @param fixup a logical value which indicates whether the resulting RGB values 
 #' should be corrected to ensure that a real color results. if fixup is FALSE 
 #' RGB components lying outside the range [0,1] will result in an NA value
