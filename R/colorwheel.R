@@ -1,20 +1,40 @@
-#' @title Show color palette in a barplot
+#' @title Visualize color palettes using a color wheel
 #'
 #' @description
-#' \code{plotpal} allows you to easily visualize a color palette by plotting the
-#' specified palette using a barchart
+#' \code{colorwheel} allows you to easily visualize a color palette by plotting
+#' all hues for the specified specified chroma and luminance values using a
+#' color wheel
 #'
-#' @param colors vector of hex colors
-#' @param hex.labels logical, should the colors hex label be shown on the plot
+#' @param chroma chroma value for palette
+#' @param luminance luminance value for palette
+#' @param labels logical, should degree labels be shown
+#' @param alpha numeric vector of values in the range [0,1] for alpha
+#' transparency channel (0 means transparent and 1 means opaque) #'
+#' @param fixup a logical value which indicates whether the resulting RGB values 
+#' should be corrected to ensure that a real color results. if fixup is FALSE 
+#' RGB components lying outside the range [0,1] will result in an NA value
 #'
-#' @return \code{plotpal} returns a barchart showing the specified colors
+#' @return \code{colorwheel} returns a pie chart showing the specified colors
 #'
 #' @seealso \code{\link{qpal}} \code{\link{dpal}} \code{\link{spal}}
 #'
+#' @export
+#'
 #' @examples
-#' plotpal(qpal(10))
-#' plotpal(qpal(100))
-#' plotpal(c("#00A0ED", "#F15A8F", "#4FA500"))
+#' colorwheel()
+#' colorwheel(chroma = 50, luminance = 60)
+#' colorwheel(chroma = 100, luminance = 75)
+#' colorwheel(chroma = 100, luminance = 25)
+#' colorwheel(chroma = 100, luminance = 0)
+#' colorwheel(chroma = 0, luminance = 50)
+#'
+#' par(mfrow = c(4, 3), mar = c(2, 0, 1.5, 0))
+#' for(i in seq(0, 100, 10))
+#'    colorwheel(chroma = i, labels = TRUE, fixup = TRUE)
+#'
+#' par(mfrow = c(3, 3), mar = c(2, 0, 1.5, 0))
+#' for(i in seq(20, 100, 10))
+#'     colorwheel(luminance = i, labels = TRUE)
 
 colorwheel <- function(chroma = 100, luminance = 60, labels = TRUE,
     alpha = 1, fixup = TRUE) {
@@ -35,31 +55,5 @@ colorwheel <- function(chroma = 100, luminance = 60, labels = TRUE,
 
 }
 
-colorwheel()
-colorwheel(label = TRUE)
-colorwheel(chroma = 50, luminance = 60)
-colorwheel(chroma = 100, luminance = 75)
-colorwheel(chroma = 100, luminance = 25)
-colorwheel(chroma = 100, luminance = 0)
-colorwheel(chroma = 0, luminance = 60)
 
 
-par(mar = c(1, 0, 1.5, 0))
-colorwheel()
-
-par(mfrow = c(4, 3), mar = c(2, 0, 1.5, 0))
-for(i in seq(0, 100, 10))
-    colorwheel(chroma = i, labels = TRUE, fixup = TRUE)
-
-par(mfrow = c(4, 3), mar = c(2, 0, 1.5, 0))
-for(i in seq(0, 100, 10))
-    colorwheel(chroma = i, labels = TRUE, fixup = FALSE)
-
-
-par(mfrow = c(3, 3), mar = c(2, 0, 1.5, 0))
-for(i in seq(20, 100, 10))
-    colorwheel(luminance = i, labels = TRUE)
-
-par(mfrow = c(3, 4), mar = c(2, 0, 1.5, 0))
-for(i in seq(10, 100, 10))
-    colorwheel(luminance = i, labels = TRUE, fixup = FALSE)

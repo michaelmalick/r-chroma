@@ -1,7 +1,11 @@
-#' @title Create sequential color palette using the HCL colorspace
+#' @title Create sequential color palettes using the HCL color space
 #'
 #' @description
-#' \code{spal} creates sequential color palettes using the HCL colorspace.
+#' \code{spal} creates sequential color palettes using the HCL color space. 
+#' Sequential color palettes are composed of a gradient of colors where the
+#' gradient can include a range of hues, luminance values, or chroma values.
+#' Sequential color palettes are suitable for encoding continuous variables
+#' where either low or high values are of importance, but not both.
 #'
 #' @param n number of colors to create
 #' @param hue.start starting hue value, should be in the interval [0, 360]
@@ -14,6 +18,8 @@
 #' @return \code{spal} returns a vector of hex colors
 #'
 #' @seealso \code{\link{hcl}} \code{\link{qpal}} \code{\link{dpal}}
+#'
+#' @export
 #'
 #' @examples
 #' plotpal(spal(140))

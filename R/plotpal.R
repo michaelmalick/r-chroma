@@ -11,6 +11,8 @@
 #'
 #' @seealso \code{\link{qpal}} \code{\link{dpal}} \code{\link{spal}}
 #'
+#' @export
+#'
 #' @examples
 #' plotpal(qpal(10))
 #' plotpal(qpal(100))

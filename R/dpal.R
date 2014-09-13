@@ -1,7 +1,11 @@
-#' @title Create divergent color palette using the HCL colorspace
+#' @title Create divergent color palettes using the HCL color space
 #'
 #' @description
-#' \code{dpal} creates divergent color palettes using the HCL colorspace.
+#' \code{dpal} creates divergent color palettes using the HCL color space. 
+#' Divergent color palettes consist of a gradient that goes from dark to light 
+#' to dark where each end of the gradient is a seperate hue.
+#' Divergent color palettes  are suitable when low and high values are of 
+#' importance, but middle range values are less important.
 #'
 #' @param n number of colors to create
 #' @param hue vector of length 2 giving the first and second hues to use
@@ -13,6 +17,8 @@
 #' @return \code{dpal} returns a vector of hex colors
 #'
 #' @seealso \code{\link{hcl}} \code{\link{qpal}} \code{\link{spal}}
+#'
+#' @export
 #'
 #' @examples
 #' plotpal(dpal(200))

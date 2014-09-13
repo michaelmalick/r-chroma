@@ -1,9 +1,11 @@
-#' Create color palettes using the HCL color space
+#' Create consistent color palettes using the HCL color space
 #'
 #' Chroma provides tools that make it easier to create color palettes for R
-#' graphics using the HCL color space.
+#' graphics using the Hue-Chroma-Luminance (HCL) color space. The HCL color
+#' space is derived from the CIE-LUV color space by applying a polar coordinate
+#' transformation. 
 #'
-#' Chroma has three function to create color palettes: \code{qpal}, \code{dpal},
+#' Chroma has three functions to create color palettes: \code{qpal}, \code{dpal},
 #' and \code{spal}. The \code{qpal} function creates qualitative color palettes
 #' that are suitable for categorical data, such as colors of bars in barplots or
 #' point colors in scatterplots. The \code{dpal} function creates divergent color

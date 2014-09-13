@@ -1,11 +1,11 @@
-Package: Chroma
+Package: chroma
 Type: Package
-Title: Chroma
+Title: chroma
 Version: 0.1
-Date: 2014-08-03
+Date: 2014-09-13
 Author: Michael Malick
 Maintainer: Michael Malick <m.malick@icloud.com>
-Depends: R (>= 2.10)
-Suggests:
+Depends:
+    R (>= 2.10)
 Description: NA
 License: NA
