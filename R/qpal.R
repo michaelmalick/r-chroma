@@ -14,11 +14,9 @@
 #' @param luminance luminance value, should be in the interval [0, 100].
 #' @param direction to travel around the color wheel. 1 = clockwise -1 =
 #' counterclockwise.
-#' @param alpha numeric vector of values in the range [0,1] for alpha
-#' transparency channel (0 means transparent and 1 means opaque)
-#' @param fixup a logical value which indicates whether the resulting RGB values 
-#' should be corrected to ensure that a real color results. if fixup is FALSE 
-#' RGB components lying outside the range [0,1] will result in an NA value
+#' @param alpha transparency level defined on the interval [0, 1] where 0 =
+#' transparent and 1 = opaque
+#' @param fixup logical, should RGB value be corrected (see \code{\link{hcl}}
 #'
 #' @return \code{qpal} returns a vector of hex colors
 #'

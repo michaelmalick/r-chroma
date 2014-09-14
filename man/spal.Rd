@@ -4,7 +4,7 @@
 \title{Create sequential color palettes using the HCL color space}
 \usage{
 spal(n, hue.start = 235, hue.end = NULL, luminance = c(30, 85),
-  chroma = c(90, 100))
+  chroma = c(90, 100), power = 1, alpha = 1, fixup = TRUE)
 }
 \arguments{
 \item{n}{number of colors to create}
@@ -18,6 +18,13 @@ range of chroma values}
 
 \item{luminance}{vector of length 2 giving the start and end bounds for the
 range of luminance values}
+
+\item{power}{parameter to control how chroma and luminance increase/decrease}
+
+\item{alpha}{transparency level defined on the interval [0, 1] where 0 =
+transparent and 1 = opaque}
+
+\item{fixup}{logical, should RGB value be corrected (see \code{\link{hcl}}}
 }
 \value{
 \code{spal} returns a vector of hex colors
@@ -37,6 +44,14 @@ plotpal(spal(140, hue.start = 235, hue.end = 70, luminance = c(20, 80)))
 
 image(t(volcano)[ncol(volcano):1,], col = spal(100))
 image(t(volcano)[ncol(volcano):1,], col = spal(100, hue.end = 70))
+
+plotpal(spal(140, power = 0.8))
+plotpal(spal(140, power = 1))
+plotpal(spal(140, power = 1.3))
+plotpal(spal(140, power = 1.5))
+
+plotpal(spal(140, hue.start = 260, chroma = c(80, 0),
+   luminance = c(30, 90), power = 1.5))
 }
 \seealso{
 \code{\link{hcl}} \code{\link{qpal}} \code{\link{dpal}}

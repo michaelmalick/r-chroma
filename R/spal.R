@@ -14,11 +14,10 @@
 #' range of chroma values
 #' @param luminance vector of length 2 giving the start and end bounds for the
 #' range of luminance values
-#' @param alpha numeric vector of values in the range [0,1] for alpha
-#' transparency channel (0 means transparent and 1 means opaque)
-#' @param fixup a logical value which indicates whether the resulting RGB values 
-#' should be corrected to ensure that a real color results. if fixup is FALSE 
-#' RGB components lying outside the range [0,1] will result in an NA value
+#' @param power parameter to control how chroma and luminance increase/decrease
+#' @param alpha transparency level defined on the interval [0, 1] where 0 =
+#' transparent and 1 = opaque
+#' @param fixup logical, should RGB value be corrected (see \code{\link{hcl}}
 #'
 #' @return \code{spal} returns a vector of hex colors
 #'
@@ -34,6 +33,14 @@
 #' 
 #' image(t(volcano)[ncol(volcano):1,], col = spal(100))
 #' image(t(volcano)[ncol(volcano):1,], col = spal(100, hue.end = 70))
+#'
+#' plotpal(spal(140, power = 0.8))
+#' plotpal(spal(140, power = 1))
+#' plotpal(spal(140, power = 1.3))
+#' plotpal(spal(140, power = 1.5))
+#' 
+#' plotpal(spal(140, hue.start = 260, chroma = c(80, 0), 
+#'    luminance = c(30, 90), power = 1.5))
 
 spal <- function(
     n,
@@ -42,16 +49,21 @@ spal <- function(
     luminance = c(30, 85),
     # luminance = c(85, 30),
     chroma = c(90, 100),
+    power = 1,
     alpha = 1,
     fixup = TRUE) { 
 
+
+    val   <- seq(1, 0, length.out = n)
+    l.seq <- luminance[2] - diff(luminance) * val^power
+    c.seq <- chroma[2] - diff(chroma) * val^power
+
     if(is.null(hue.end)) {
-        co <- hcl(h = hue.start, l = seq(luminance[1], luminance[2], 
-            length.out = n), c = chroma)
+        co <- hcl(h = hue.start, l = l.seq, c = c.seq,
+            alpha = alpha, fixup = fixup)
     } else {
         co <- qpal(n = n, hue.start = hue.start, hue.end = hue.end, 
-            luminance = seq(luminance[1], luminance[2], length.out = n), 
-            chroma = seq(chroma[1], chroma[2], length.out = n),
+            luminance = l.seq, chroma = c.seq,
             alpha = alpha, fixup = fixup)
     }
 

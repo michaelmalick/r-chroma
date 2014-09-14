@@ -13,12 +13,10 @@ colorwheel(chroma = 100, luminance = 60, labels = TRUE, alpha = 1,
 
 \item{labels}{logical, should degree labels be shown}
 
-\item{alpha}{numeric vector of values in the range [0,1] for alpha
-transparency channel (0 means transparent and 1 means opaque) #'}
+\item{alpha}{transparency level defined on the interval [0, 1] where 0 =
+transparent and 1 = opaque}
 
-\item{fixup}{a logical value which indicates whether the resulting RGB values
-should be corrected to ensure that a real color results. if fixup is FALSE
-RGB components lying outside the range [0,1] will result in an NA value}
+\item{fixup}{logical, should RGB value be corrected (see \code{\link{hcl}}}
 }
 \value{
 \code{colorwheel} returns a pie chart showing the specified colors

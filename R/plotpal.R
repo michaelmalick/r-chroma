@@ -17,8 +17,9 @@
 #' plotpal(qpal(10))
 #' plotpal(qpal(100))
 #' plotpal(c("#00A0ED", "#F15A8F", "#4FA500"))
+#' plotpal(qpal(10), border = "grey50", space = 0)
 
-plotpal <- function(colors, hex.labels = FALSE) {
+plotpal <- function(colors, hex.labels = FALSE, space = NULL, border = colors) {
 
     n <- length(colors)
 
@@ -27,7 +28,7 @@ plotpal <- function(colors, hex.labels = FALSE) {
     else
         labels <- NA
 
-    barplot(rep(1, n), col = colors, names.arg = labels, border = colors, 
-        axes = FALSE)
+    barplot(rep(1, n), col = colors, names.arg = labels,
+        axes = FALSE, space = space, border = border)
 
 }

@@ -9,15 +9,13 @@
 #'
 #' @param n number of colors to create
 #' @param hue vector of length 2 giving the first and second hues to use
-#' @param chroma vector of length 2 giving the start and end bounds for the
-#' range of chroma values
+#' @param chroma chroma value for palette
 #' @param luminance vector of length 2 giving the start and end bounds for the
 #' range of luminance values
-#' @param alpha numeric vector of values in the range [0,1] for alpha
-#' transparency channel (0 means transparent and 1 means opaque)
-#' @param fixup a logical value which indicates whether the resulting RGB values 
-#' should be corrected to ensure that a real color results. if fixup is FALSE 
-#' RGB components lying outside the range [0,1] will result in an NA value
+#' @param power parameter to control how chroma and luminance increase/decrease
+#' @param alpha transparency level defined on the interval [0, 1] where 0 =
+#' transparent and 1 = opaque
+#' @param fixup logical, should RGB value be corrected (see \code{\link{hcl}}
 #'
 #' @return \code{dpal} returns a vector of hex colors
 #'
@@ -27,8 +25,11 @@
 #'
 #' @examples
 #' plotpal(dpal(200))
+#' plotpal(dpal(200, luminance = c(30, 90)))
+#' plotpal(dpal(200, luminance = c(30, 90), power = 2))
+#' plotpal(dpal(200, luminance = c(30, 90), power = 0.8))
 #' plotpal(dpal(200, hue = c(100, 240)))
-#' plotpal(dpal(200, hue = c(40, 240), c = c(40, 100)))
+#' plotpal(dpal(200, hue = c(40, 240), luminance = c(30, 90)))
 #'
 #' mat <- matrix(c(rnorm(100), rnorm(100) + 1, rnorm(100) + 2, rnorm(100) + 3),
 #'               ncol = 4) 
@@ -37,17 +38,18 @@
 
 dpal <- function(
     n,
-    hue = c(0, 235),
-    chroma = c(0, 60),
+    hue = c(260, 0),
+    chroma = 80,
     luminance = c(25, 100),
+    power = 1.3,
     alpha = 1,
     fixup = TRUE) {
 
-    l.seq <- seq(luminance[1], luminance[2], length.out = n/2)
-    c.seq <- seq(chroma[2], chroma[1], length.out = n/2)
-    co1   <- hcl(h = hue[1], l = l.seq, c = c.seq, alpha = alpha, fixup = fixup)
-    co2   <- hcl(h = hue[2], l = l.seq, c = c.seq, alpha = alpha, fixup = fixup)
-    co    <- c(co1, rev(co2))
+    val   <- seq(1, -1, length.out = n)
+    l.seq <- luminance[2] - diff(luminance) * abs(val)^power
+    c.seq <- chroma * abs(val)^power
+    h.seq <- ifelse(val > 0, hue[1], hue[2])
+    co    <- hcl(l = l.seq, c = c.seq, h = h.seq, alpha = alpha, fixup = fixup)
 
     return(co)
 
