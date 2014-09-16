@@ -53,6 +53,9 @@ plotpal(spal(140, power = 1.5))
 plotpal(spal(140, hue.start = 260, chroma = c(80, 0),
     luminance = c(30, 90), power = 1.5))
 }
+\author{
+Michael Malick
+}
 \seealso{
 \code{\link{hcl}} \code{\link{qpal}} \code{\link{dpal}}
 }

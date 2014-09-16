@@ -30,6 +30,8 @@
 #' @seealso \code{\link{hcl}} \code{\link{dpal}} \code{\link{spal}}
 #' 
 #' @export
+#'
+#' @author Michael Malick
 #' 
 #' @examples
 #' plotpal(qpal(5))

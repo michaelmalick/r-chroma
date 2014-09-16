@@ -42,6 +42,9 @@ par(mfrow = c(3, 3), mar = c(2, 0, 1.5, 0))
 for(i in seq(20, 100, 10))
     colorwheel(luminance = i, labels = TRUE)
 }
+\author{
+Michael Malick
+}
 \seealso{
 \code{\link{qpal}} \code{\link{dpal}} \code{\link{spal}}
 }

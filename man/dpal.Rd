@@ -47,6 +47,9 @@ mat <- matrix(c(rnorm(100), rnorm(100) + 1, rnorm(100) + 2,
 image(z = mat, col = dpal(200), axes = FALSE)
 box()
 }
+\author{
+Michael Malick
+}
 \seealso{
 \code{\link{hcl}} \code{\link{qpal}} \code{\link{spal}}
 }

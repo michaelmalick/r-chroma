@@ -74,6 +74,9 @@ plot(rnorm(300), col = mycol[1], pch = 19)
 points(rnorm(300), col = mycol[2], pch = 19)
 points(rnorm(300), col = mycol[3], pch = 19)
 }
+\author{
+Michael Malick
+}
 \seealso{
 \code{\link{hcl}} \code{\link{dpal}} \code{\link{spal}}
 }

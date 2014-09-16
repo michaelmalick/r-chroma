@@ -23,6 +23,9 @@ plotpal(qpal(100))
 plotpal(c("#00A0ED", "#F15A8F", "#4FA500"))
 plotpal(qpal(10), border = "grey50", space = 0)
 }
+\author{
+Michael Malick
+}
 \seealso{
 \code{\link{qpal}} \code{\link{dpal}} \code{\link{spal}}
 }
