@@ -8,4 +8,4 @@ Maintainer: Michael Malick <m.malick@icloud.com>
 Depends:
     R (>= 2.10)
 Description: NA
-License: NA
+License: MIT
