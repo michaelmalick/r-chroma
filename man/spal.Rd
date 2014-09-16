@@ -13,11 +13,11 @@ spal(n, hue.start = 235, hue.end = NULL, luminance = c(30, 85),
 
 \item{hue.end}{ending hue value, should be in the interval [0, 360].}
 
-\item{chroma}{vector of length 2 giving the start and end bounds for the
-range of chroma values}
+\item{chroma}{vector of length 2 giving the start and end bounds for the range of chroma
+values}
 
-\item{luminance}{vector of length 2 giving the start and end bounds for the
-range of luminance values}
+\item{luminance}{vector of length 2 giving the start and end bounds for the range of
+luminance values}
 
 \item{power}{parameter to control how chroma and luminance increase/decrease}
 
@@ -31,10 +31,10 @@ transparent and 1 = opaque}
 }
 \description{
 \code{spal} creates sequential color palettes using the HCL color space.
-Sequential color palettes are composed of a gradient of colors where the
-gradient can include a range of hues, luminance values, or chroma values.
-Sequential color palettes are suitable for encoding continuous variables
-where either low or high values are of importance, but not both.
+    Sequential color palettes are composed of a gradient of colors where the
+    gradient can include a range of hues, luminance values, or chroma values.
+    Sequential color palettes are suitable for encoding continuous variables
+    where either low or high values are of importance, but not both.
 }
 \examples{
 plotpal(spal(140))
@@ -51,7 +51,7 @@ plotpal(spal(140, power = 1.3))
 plotpal(spal(140, power = 1.5))
 
 plotpal(spal(140, hue.start = 260, chroma = c(80, 0),
-   luminance = c(30, 90), power = 1.5))
+    luminance = c(30, 90), power = 1.5))
 }
 \seealso{
 \code{\link{hcl}} \code{\link{qpal}} \code{\link{dpal}}

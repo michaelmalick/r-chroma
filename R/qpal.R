@@ -1,29 +1,36 @@
 #' @title Create qualitative color palettes using the HCL color space
-#'
+#' 
 #' @description
-#' \code{qpal} creates qualitative color palettes using the HCL color space.
-#' Qualitative color palettes consist of a set of discrete colors that
-#' are suitable for categorical data such as barcharts or distinguishing groups 
-#' in a scatterplot.
-#'
-#' @param n number of colors to create
-#' @param hue.start starting hue value, should be in the interval [0, 360]
-#' @param hue.end ending hue value, should be in the interval [0, 360].
-#' @param chroma chroma value, range of possible value depends on hue and
-#' luminance values.
-#' @param luminance luminance value, should be in the interval [0, 100].
-#' @param direction to travel around the color wheel. 1 = clockwise -1 =
-#' counterclockwise.
-#' @param alpha transparency level defined on the interval [0, 1] where 0 =
-#' transparent and 1 = opaque
-#' @param fixup logical, should RGB value be corrected (see \code{\link{hcl}}
-#'
+#'     \code{qpal} creates qualitative color palettes using the HCL color space.
+#'     Qualitative color palettes consist of a set of discrete colors that are
+#'     suitable for categorical data such as barcharts or distinguishing groups 
+#'     in a scatterplot.
+#' 
+#' @param n 
+#'     number of colors to create
+#' @param hue.start 
+#'     starting hue value, should be in the interval [0, 360]
+#' @param hue.end 
+#'     ending hue value, should be in the interval [0, 360].
+#' @param chroma 
+#'     chroma value, range of possible value depends on hue and luminance values.
+#' @param luminance 
+#'     luminance value, should be in the interval [0, 100].
+#' @param direction 
+#'     direction to travel around the color wheel. 1 = clockwise -1 =
+#'     counterclockwise.
+#' @param alpha 
+#'     transparency level defined on the interval [0, 1] where 0 = transparent 
+#'     and 1 = opaque
+#' @param fixup 
+#'     logical, should RGB value be corrected (see \code{\link{hcl}}
+#' 
 #' @return \code{qpal} returns a vector of hex colors
-#'
+#' 
 #' @seealso \code{\link{hcl}} \code{\link{dpal}} \code{\link{spal}}
-#'
+#' 
 #' @export
-#'
+#' 
 #' @examples
 #' plotpal(qpal(5))
 #' plotpal(qpal(5, hue.start = 0))
@@ -38,7 +45,7 @@
 #' plotpal(qpal(5, luminance = 30))
 #' plotpal(qpal(5, luminance = 80))
 #' plotpal(qpal(100, luminance = seq(25, 90, length = 100)))
-#'
+#' 
 #' y1 <- rnorm(100)
 #' y2 <- rnorm(100) + 2
 #' y3 <- rnorm(100) + 4
@@ -46,7 +53,7 @@
 #' plot(y1, type = "l", col = mycol[1], ylim = c(-3, 7))
 #' lines(y2, col = mycol[2])
 #' lines(y3, col = mycol[3])
-#'
+#' 
 #' mycol <- qpal(3, chroma = 90, luminance = 60)
 #' plot(iris$Sepal.Length[iris$Species == "setosa"], 
 #'     iris$Sepal.Width[iris$Species == "setosa"], 
@@ -58,12 +65,12 @@
 #' points(iris$Sepal.Length[iris$Species == "versicolor"], 
 #'     iris$Sepal.Width[iris$Species == "versicolor"], 
 #'     col = mycol[3], pch = 19)
-#'
+#' 
 #' mycol <- qpal(3, alpha = 0.2)
 #' plot(rnorm(300), col = mycol[1], pch = 19)
 #' points(rnorm(300), col = mycol[2], pch = 19)
 #' points(rnorm(300), col = mycol[3], pch = 19)
-
+#' 
 qpal <- function(
     n,
     hue.start = 235,

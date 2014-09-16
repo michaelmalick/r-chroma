@@ -13,16 +13,15 @@ qpal(n, hue.start = 235, hue.end = NULL, chroma = 100, luminance = 60,
 
 \item{hue.end}{ending hue value, should be in the interval [0, 360].}
 
-\item{chroma}{chroma value, range of possible value depends on hue and
-luminance values.}
+\item{chroma}{chroma value, range of possible value depends on hue and luminance values.}
 
 \item{luminance}{luminance value, should be in the interval [0, 100].}
 
-\item{direction}{to travel around the color wheel. 1 = clockwise -1 =
+\item{direction}{direction to travel around the color wheel. 1 = clockwise -1 =
 counterclockwise.}
 
-\item{alpha}{transparency level defined on the interval [0, 1] where 0 =
-transparent and 1 = opaque}
+\item{alpha}{transparency level defined on the interval [0, 1] where 0 = transparent
+and 1 = opaque}
 
 \item{fixup}{logical, should RGB value be corrected (see \code{\link{hcl}}}
 }
@@ -31,9 +30,9 @@ transparent and 1 = opaque}
 }
 \description{
 \code{qpal} creates qualitative color palettes using the HCL color space.
-Qualitative color palettes consist of a set of discrete colors that
-are suitable for categorical data such as barcharts or distinguishing groups
-in a scatterplot.
+    Qualitative color palettes consist of a set of discrete colors that are
+    suitable for categorical data such as barcharts or distinguishing groups
+    in a scatterplot.
 }
 \examples{
 plotpal(qpal(5))

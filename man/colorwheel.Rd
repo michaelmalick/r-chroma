@@ -13,8 +13,8 @@ colorwheel(chroma = 100, luminance = 60, labels = TRUE, alpha = 1,
 
 \item{labels}{logical, should degree labels be shown}
 
-\item{alpha}{transparency level defined on the interval [0, 1] where 0 =
-transparent and 1 = opaque}
+\item{alpha}{transparency level defined on the interval [0, 1] where
+0 = transparent and 1 = opaque}
 
 \item{fixup}{logical, should RGB value be corrected (see \code{\link{hcl}}}
 }
@@ -22,9 +22,9 @@ transparent and 1 = opaque}
 \code{colorwheel} returns a pie chart showing the specified colors
 }
 \description{
-\code{colorwheel} allows you to easily visualize a color palette by plotting
-all hues for the specified specified chroma and luminance values using a
-color wheel
+\code{colorwheel} allows you to easily visualize a color palette by
+    plotting all hues for the specified specified chroma and luminance
+    values using a color wheel
 }
 \examples{
 colorwheel()

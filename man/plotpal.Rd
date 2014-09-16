@@ -14,8 +14,8 @@ plotpal(colors, hex.labels = FALSE, space = NULL, border = colors)
 \code{plotpal} returns a barchart showing the specified colors
 }
 \description{
-\code{plotpal} allows you to easily visualize a color palette by plotting the
-specified palette using a barchart
+\code{plotpal} allows you to easily visualize a color palette by plotting
+    the specified palette using a barchart
 }
 \examples{
 plotpal(qpal(10))

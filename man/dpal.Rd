@@ -28,10 +28,10 @@ transparent and 1 = opaque}
 }
 \description{
 \code{dpal} creates divergent color palettes using the HCL color space.
-Divergent color palettes consist of a gradient that goes from dark to light
-to dark where both ends of the gradient are a separate hue.
-Divergent color palettes  are suitable when low and high values are of
-importance, but middle range values are less important.
+    Divergent color palettes consist of a gradient that goes from dark to
+    light to dark where both ends of the gradient are a separate hue.
+    Divergent color palettes  are suitable when low and high values are of
+    importance, but middle range values are less important.
 }
 \examples{
 plotpal(dpal(200))
@@ -41,7 +41,8 @@ plotpal(dpal(200, luminance = c(30, 90), power = 0.8))
 plotpal(dpal(200, hue = c(100, 240)))
 plotpal(dpal(200, hue = c(40, 240), luminance = c(30, 90)))
 
-mat <- matrix(c(rnorm(100), rnorm(100) + 1, rnorm(100) + 2, rnorm(100) + 3),
+mat <- matrix(c(rnorm(100), rnorm(100) + 1, rnorm(100) + 2,
+    rnorm(100) + 3),
               ncol = 4)
 image(z = mat, col = dpal(200), axes = FALSE)
 box()
