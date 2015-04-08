@@ -37,10 +37,10 @@ The `chroma` package is not on CRAN, but can be installed from R using:
 
     install.packages("devtools")
     library(devtools)
-    install_github("chroma", username = "michaelmalick")
+    install_github("r-chroma", username = "michaelmalick")
 
 
 # License 
-The chroma package is [MIT/X11](http://opensource.org/licenses/MIT) licensed.
-Copyright (c) 2014 Michael Malick
+The `chroma` package is [MIT/X11](http://opensource.org/licenses/MIT) licensed.
+Copyright (c) 2014-2015 Michael Malick
 
