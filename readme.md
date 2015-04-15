@@ -37,7 +37,8 @@ The `chroma` package is not on CRAN, but can be installed from R using:
 
     install.packages("devtools")
     library(devtools)
-    install_github("r-chroma", username = "michaelmalick")
+    install_github(repo = "michaelmalick/r-chroma")
+    library(chroma)
 
 
 # License 
