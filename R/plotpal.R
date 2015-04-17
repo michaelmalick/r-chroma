@@ -8,6 +8,10 @@
 #'     vector of hex colors
 #' @param hex.labels 
 #'     logical, should the colors hex label be shown on the plot
+#' @param space
+#'      numeric giving space between color bars
+#' @param border
+#'      color of borders for bars
 #' 
 #' @return \code{plotpal} returns a barchart showing the specified colors
 #' 
