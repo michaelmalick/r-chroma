@@ -11,7 +11,7 @@ space by applying a polar coordinate transformation (see
 [here](https://www.sciencedirect.com/science/article/pii/S0167947308005549?np=y)
 for details).
 
-The `chroma` package has three functions to create color palettes: 
+The `chroma` package has three functions to create color palettes:
 
   - `qpal`: create qualitative color palettes
     - Qualitative color palettes consist of a set of discrete colors that are
@@ -41,7 +41,5 @@ The `chroma` package is not on CRAN, but can be installed from R using:
     library(chroma)
 
 
-# License 
-The `chroma` package is [MIT/X11](http://opensource.org/licenses/MIT) licensed.
-Copyright (c) 2014-2015 Michael Malick
-
+# License
+MIT
