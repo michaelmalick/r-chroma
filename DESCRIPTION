@@ -1,11 +1,13 @@
 Package: chroma
 Type: Package
 Title: chroma
-Version: 0.1
-Date: 2015-04-15
+Version: 0.2
+Date: 2018-08-30
 Author: Michael Malick
 Maintainer: Michael Malick <malickmj@gmail.com>
 Depends:
     R (>= 3.0)
-Description: NA
-License: MIT
+Description: Create qualitative, sequential, and divergent color palettes in the
+    HCL color space.
+License: file LICENSE
+RoxygenNote: 6.0.1
